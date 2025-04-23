@@ -17,7 +17,7 @@ MAX_FILE_SIZE_MB = 200  # Maximum file size in MB before splitting
 MAX_PAGES = 1000  # Maximum number of pages before splitting
 
 # Get API key from environment variable
-# api_key = os.getenv('MISTRAL_API_KEY')
+api_key = os.getenv('MISTRAL_API_KEY')
 # Or simply paste your key here
 # api_key = "Add your key here"
 if not api_key:
