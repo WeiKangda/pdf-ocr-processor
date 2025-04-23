@@ -134,6 +134,7 @@ You can modify the following constants in `mistral_ocr.py`:
 - `MAX_DELAY`: Maximum delay between retries (default: 60 seconds)
 - `MAX_PAGES_PER_SPLIT`: Maximum pages to process at once (default: 300)
 - `MAX_FILE_SIZE_MB`: Maximum file size before splitting (default: 200MB)
+- `MAX_PAGES`: Maximum number of pages to process from a PDF (default: 1000)
 
 ## License
 
