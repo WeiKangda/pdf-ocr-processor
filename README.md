@@ -87,12 +87,12 @@ Here's an example of a PDF page before and after processing:
 
 <div align="center">
   <h4>Original PDF Page</h4>
-  <img src="page638.png" alt="Original PDF Page" width="400">
+  <img src="examples/page638.png" alt="Original PDF Page" width="400">
   
   <h4>Extracted Text</h4>
   <pre>
   <code>
-![img-166.jpeg](img-166.jpeg)
+![examples/img-166.jpeg](examples/img-166.jpeg)
 
 FIGURE B-1 Ordinary and modified Bessel functions of zero order.
 
@@ -124,7 +124,7 @@ TABLE B-1 Bessel Functions of Order Zero and One
   </pre>
   
   <h4>Extracted Image</h4>
-  <img src="img-166.jpeg" alt="Extracted Image" width="400">
+  <img src="examples/img-166.jpeg" alt="Extracted Image" width="400">
 </div>
 
 ## Configuration
