@@ -19,7 +19,7 @@ MAX_PAGES = 1000  # Maximum number of pages before splitting
 # Get API key from environment variable
 # api_key = os.getenv('MISTRAL_API_KEY')
 # Or simply paste your key here
-api_key = "CoGdbzf0F1Tzgkd5G42UEfA183Q728GJ"
+# api_key = "Add your key here"
 if not api_key:
     print("Error: MISTRAL_API_KEY environment variable is not set")
     print("Please set your Mistral AI API key using:")
