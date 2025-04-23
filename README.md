@@ -93,6 +93,20 @@ You can modify the following constants in `mistral_ocr.py`:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Potential Uses
+
+This tool is particularly valuable for several use cases:
+
+- **RAG Systems Integration**: Mistral OCR is an ideal model to use in combination with a RAG (Retrieval-Augmented Generation) system, especially when working with multimodal documents like slides or complex PDFs. The processed content can be used to build more accurate and context-aware AI applications.
+
+- **Document Understanding**: The extracted markdown texts and images can be used for more fine-grained document analysis and understanding. This is particularly useful for:
+  - Academic research and paper analysis
+  - Legal document processing
+  - Technical documentation management
+  - Business report analysis
+
+- **Cost-Effective Solution**: The Mistral OCR API is currently free to use, making this tool an accessible solution for both individual developers and organizations.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request. 
