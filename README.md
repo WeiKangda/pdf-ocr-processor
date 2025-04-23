@@ -1,5 +1,16 @@
 # PDF OCR Processor with Mistral AI
 
+<div align="center">
+  <img src="https://img.shields.io/badge/Mistral%20AI-OCR%20Processor-blue" alt="Mistral AI OCR Processor">
+  <br>
+  <pre>
+  📄  ┌─────────────────────┐  🔍
+      │    PDF OCR         │
+      │    Processor       │
+      └─────────────────────┘
+  </pre>
+</div>
+
 A Python tool that uses Mistral AI's OCR capabilities to process PDF documents, extract text and images, and save them in an organized structure. This project utilizes Mistral AI's state-of-the-art OCR technology as described in their [official documentation](https://mistral.ai/news/mistral-ocr).
 
 ## Features
