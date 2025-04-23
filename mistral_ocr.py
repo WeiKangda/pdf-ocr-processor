@@ -14,9 +14,12 @@ INITIAL_DELAY = 2  # seconds
 MAX_DELAY = 60  # maximum delay between retries in seconds
 MAX_PAGES_PER_SPLIT = 300  # Maximum number of pages to process at once
 MAX_FILE_SIZE_MB = 200  # Maximum file size in MB before splitting
+MAX_PAGES = 1000  # Maximum number of pages before splitting
 
 # Get API key from environment variable
-api_key = os.getenv('MISTRAL_API_KEY')
+# api_key = os.getenv('MISTRAL_API_KEY')
+# Or simply paste your key here
+api_key = "CoGdbzf0F1Tzgkd5G42UEfA183Q728GJ"
 if not api_key:
     print("Error: MISTRAL_API_KEY environment variable is not set")
     print("Please set your Mistral AI API key using:")
@@ -233,7 +236,7 @@ def is_fully_processed(file_path):
 
 def split_pdf(file_path):
     """
-    Split a PDF into smaller parts if it's too large.
+    Split a PDF into smaller parts if it's too large or has too many pages.
     
     Args:
         file_path (str): Path to the PDF file
@@ -244,17 +247,24 @@ def split_pdf(file_path):
     try:
         # Check file size
         file_size_mb = os.path.getsize(file_path) / (1024 * 1024)  # Convert to MB
-        if file_size_mb <= MAX_FILE_SIZE_MB:
-            return [file_path]
-            
-        print(f"File size ({file_size_mb:.2f}MB) exceeds {MAX_FILE_SIZE_MB}MB, splitting into parts...")
         
         # Read the PDF
         reader = PdfReader(file_path)
         total_pages = len(reader.pages)
         
-        # Calculate number of splits needed
-        num_splits = (total_pages + MAX_PAGES_PER_SPLIT - 1) // MAX_PAGES_PER_SPLIT
+        # Check if we need to split based on either size or page count
+        if file_size_mb <= MAX_FILE_SIZE_MB and total_pages <= MAX_PAGES:
+            return [file_path]
+            
+        if file_size_mb > MAX_FILE_SIZE_MB:
+            print(f"File size ({file_size_mb:.2f}MB) exceeds {MAX_FILE_SIZE_MB}MB, splitting into parts...")
+        if total_pages > MAX_PAGES:
+            print(f"Page count ({total_pages}) exceeds {MAX_PAGES} pages, splitting into parts...")
+        
+        # Calculate number of splits needed based on both constraints
+        splits_by_size = (total_pages + MAX_PAGES_PER_SPLIT - 1) // MAX_PAGES_PER_SPLIT
+        splits_by_pages = (total_pages + MAX_PAGES - 1) // MAX_PAGES
+        num_splits = max(splits_by_size, splits_by_pages)
         
         split_files = []
         base_name = os.path.splitext(os.path.basename(file_path))[0]
