@@ -39,7 +39,7 @@ Download from: https://github.com/oschwartz10612/poppler-windows/releases/
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/pdf-ocr-processor.git
+git clone https://github.com/WeiKangda/pdf-ocr-processor.git
 cd pdf-ocr-processor
 ```
 
